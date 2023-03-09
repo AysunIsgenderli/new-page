@@ -1,0 +1,698 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: "Roboto", sans-serif;
+}
+$color-white: rgba(255, 255, 255, 1);
+$bg-black: rgba(0, 0, 0, 1);
+$color-red: rgba(255, 0, 0, 1);
+$color-orange: rgba(244, 132, 0, 1);
+$color-blue: rgba(63, 1, 236, 1);
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-content {
+  margin-top: 200px;
+  padding-bottom: 80px;
+  max-width: 47%;
+  h2 {
+    font-size: 40px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  p {
+    font-size: 21px;
+  }
+  button {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 30px 0;
+    border: none;
+    border: 2px solid $color-red;
+    padding: 15px;
+    color: $color-white;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.4s ease;
+    &:hover {
+      background-color: $color-red;
+      border-color: $bg-black;
+    }
+  }
+}
+.social {
+  display: flex;
+  margin: 10px 0;
+  i {
+    margin-right: 5px;
+    @include flex-center();
+    width: 40px;
+    height: 40px;
+    padding: 7px 8px;
+    border: 1px solid;
+    border-radius: 50%;
+    color: $bg-black;
+    cursor: pointer;
+    transition: 0.4s ease;
+    &:hover {
+      background-color: $bg-black;
+      color: $color-white;
+    }
+  }
+}
+// header
+header {
+  background-color: $bg-black;
+  color: $color-white;
+  .container {
+    padding: 30px 0;
+
+    .navbar {
+      @include flex-between;
+
+      nav {
+        display: none;
+        ul {
+          display: flex;
+          .active {
+            color: $color-red;
+          }
+          li {
+            a {
+              color: $color-white;
+              font-family: "Oswald", sans-serif;
+              padding: 6px 16px;
+              text-transform: uppercase;
+              margin: 0 5px;
+              transition: 0.4s ease;
+              &:hover {
+                color: $color-red;
+              }
+              i {
+                font-size: 11px;
+              }
+            }
+          }
+          .dropdown {
+            ul {
+              border: 1px solid $color-white;
+              display: flex;
+              flex-direction: column;
+              min-width: 200px;
+              background: transparent;
+              li {
+                margin-top: 5px;
+                padding: 5px;
+                width: 100%;
+                &:first-child {
+                  border-bottom: 1px solid $color-white;
+                }
+                &:hover {
+                  color: $color-white;
+                }
+                a {
+                  margin: 0;
+                  padding: 8px;
+                  width: 100%;
+                  &:hover {
+                    color: $color-red;
+                    background-color: transparent;
+                  }
+                }
+              }
+            }
+          }
+          .layout-dropdown {
+            position: relative;
+            z-index: 9;
+            &:hover ul {
+              display: block;
+            }
+            ul {
+              display: none;
+              position: absolute;
+              top: 123%;
+              left: 15%;
+            }
+          }
+          .shop-dropdown {
+            position: relative;
+            z-index: 9;
+            &:hover ul {
+              display: block;
+            }
+            ul {
+              display: none;
+              position: absolute;
+              padding-top: 20px;
+            }
+          }
+        }
+      }
+      .bars {
+        @include flex-center();
+        width: 50px;
+        height: 50px;
+        // background-color: $bg-blue;
+        color: $color-white;
+        font-size: 30px;
+      }
+    }
+  }
+}
+// about
+.about {
+  padding: 50px 0;
+  background: url(../images/Mask\ Group.png) no-repeat rgba(245, 244, 244, 0.5);
+  background-size: cover;
+  .container {
+    .text-content {
+      color: $bg-black;
+      max-width: 60%;
+      margin: 0 auto;
+      text-align: center;
+      h2 {
+        max-width: 70%;
+        margin: 0 auto;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+    .text-groups {
+      @include flex-between();
+      .group {
+        width: 30%;
+        padding: 10px;
+        span {
+          font-family: "Oswald", sans-serif;
+          text-transform: uppercase;
+          font-size: 25px;
+          font-weight: 700;
+          border-bottom: 2px solid;
+          padding: 5px 10px;
+        }
+        p {
+          margin: 15px 0;
+          font-size: 17px;
+        }
+      }
+      .group-1 {
+        border-left: 2px solid $color-orange;
+        span {
+          border-bottom-color: $color-orange;
+        }
+      }
+      .group-2 {
+        border-left: 2px solid $color-blue;
+        span {
+          border-bottom-color: $color-blue;
+        }
+      }
+      .group-3 {
+        border-left: 2px solid $color-red;
+        span {
+          border-bottom-color: $color-red;
+        }
+      }
+    }
+  }
+}
+// bg-image
+.bg-img {
+  padding: 80px 0;
+  background: url(../images/bg-img.png) no-repeat;
+  background-size: cover;
+  position: relative;
+  .layout {
+    background-color: rgba(28, 18, 101, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .container {
+    position: relative;
+    color: $color-white;
+    .text-content {
+      max-width: 50%;
+      margin-top: 0;
+      padding-bottom: 0;
+    }
+    .icon-groups {
+      @include flex-between();
+      margin-top: 100px;
+      .icon-group {
+        text-align: center;
+        width: 30%;
+        img {
+          width: 50px;
+          height: 50px;
+        }
+        h3 {
+          margin: 10px 0;
+          font-family: "Oswald", sans-serif;
+          font-size: 22px;
+        }
+        p {
+          max-width: 70%;
+          margin: 0 auto;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+// consulting
+.consulting {
+  background-color: rgba(220, 220, 220, 1);
+  .top {
+    .container {
+      @include flex-between();
+      padding: 60px 0 120px 0;
+      h2 {
+        font-family: "Oswald", sans-serif;
+        font-size: 30px;
+      }
+      .card-item {
+        width: 22%;
+        padding: 10px;
+        h5 {
+          font-family: "Oswald", sans-serif;
+          font-size: 20px;
+          border-top: 2px solid $color-white;
+          padding: 5px 0;
+        }
+        p {
+          font-size: 17px;
+        }
+      }
+      .active {
+        background-color: $color-white;
+        box-shadow: 4px 2px 27px 10px rgba(130, 129, 129, 0.78);
+        h5 {
+          border-top: 3px solid $color-red;
+        }
+      }
+    }
+  }
+  .bottom {
+    .container {
+      background-color: $color-white;
+      display: flex;
+      justify-content: space-between;
+      max-width: 95%;
+
+      .left-side {
+        width: 70%;
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .right-side {
+        margin: 0 auto;
+        width: 25%;
+        padding: 30px 0 10px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 18px;
+        ul {
+          li {
+            list-style-type: disc;
+            a {
+              color: $bg-black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// partnership
+.partnership {
+  .container {
+    @include flex-between();
+    padding: 80px 0 50px 0;
+    color: $bg-black;
+    .left-side {
+      width: 47%;
+      h2 {
+        font-family: "Oswald", sans-serif;
+        font-weight: 700;
+        font-size: 38px;
+        max-width: 80%;
+      }
+      .active {
+        color: $color-red;
+        font-size: 17px;
+        margin: 15px 0;
+      }
+      p {
+        font-size: 20px;
+        max-width: 80%;
+        line-height: 28px;
+      }
+    }
+    .right-side {
+      width: 47%;
+      @include flex-between();
+      flex-wrap: wrap;
+      div {
+        width: 22%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+// managers
+.managers {
+  .container {
+    @include flex-between();
+    .manager-card {
+      width: 30%;
+      .card-img {
+        img {
+          width: 100%;
+        }
+      }
+      .card-content {
+        width: 45%;
+        margin-top: 10px;
+        h3 {
+          color: $bg-black;
+        }
+        p {
+          color: rgba(113, 113, 113, 1);
+          border-bottom: 1px solid rgb(154, 144, 144);
+          max-width: 80%;
+          font-size: 18px;
+          font-weight: 300;
+          padding: 5px 0;
+        }
+      }
+    }
+  }
+}
+// contact
+.contacts {
+  .container {
+    padding: 50px 0;
+    .top {
+      @include flex-between();
+      margin: 50px 0;
+      .contact {
+        width: 30%;
+        @include flex-center();
+        color: $bg-black;
+        .img {
+          width: 40px;
+          height: 40px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .content {
+          margin-left: 10px;
+          p {
+            font-size: 20px;
+            margin-bottom: 8px;
+          }
+          a {
+            color: $bg-black;
+            font-size: 22px;
+            line-height: 15px;
+          }
+        }
+      }
+    }
+    .bottom {
+      @include flex-between();
+      .left-side {
+        width: 30%;
+        h3 {
+          font-size: 30px;
+          font-weight: 500;
+          letter-spacing: 1px;
+        }
+        p {
+          letter-spacing: 0.2px;
+          line-height: 18px;
+          margin-top: 10px;
+        }
+        .social {
+          justify-content: flex-end;
+        }
+      }
+      .right-side {
+        width: 68%;
+
+        label {
+          font-weight: 500;
+        }
+        .forms-top {
+          width: 100%;
+          @include flex-between();
+          .form-top {
+            display: flex;
+            flex-direction: column;
+            width: 32%;
+            input {
+              padding: 12px 15px;
+              background-color: rgba(196, 196, 196, 1);
+              outline: none;
+              border: none;
+            }
+          }
+        }
+        .form-center {
+          display: flex;
+          flex-direction: column;
+          margin: 15px 0;
+          textarea {
+            background: rgba(196, 196, 196, 1);
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            outline: none;
+          }
+        }
+        button {
+          width: 32%;
+          background: rgba(196, 196, 196, 1);
+          border: none;
+          padding: 10px;
+          font-weight: 500;
+          font-size: 17px;
+          cursor: pointer;
+          transition: 0.4s ease;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .about {
+    .container {
+      .text-content {
+        max-width: 100%;
+        h2 {
+          max-width: 100%;
+        }
+      }
+      .text-groups {
+        flex-wrap: wrap;
+        .group {
+          width: 100%;
+          margin: 15px 0;
+        }
+      }
+    }
+  }
+  .bg-img {
+    .container {
+      .icon-groups {
+        flex-wrap: wrap;
+        .icon-group {
+          width: 100%;
+          margin: 15px 0;
+          p {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .consulting {
+    .top {
+      .container {
+        flex-wrap: wrap;
+        .card-item {
+          width: 100%;
+          margin: 15px 0;
+        }
+      }
+    }
+  }
+  .partnership {
+    .container {
+      .container {
+        flex-wrap: wrap;
+        .left-side {
+          width: 100%;
+          h2 {
+            max-width: 100%;
+          }
+          p {
+            max-width: 100%;
+          }
+        }
+        .right-side {
+          width: 100%;
+          margin: 20px 0;
+        }
+      }
+    }
+  }
+  .contacts {
+    .container {
+      max-width: 90%;
+      .top {
+        flex-wrap: wrap;
+        padding: 20px;
+        .contact {
+          width: 100%;
+          justify-content: flex-start;
+          margin: 15px 0;
+        }
+      }
+      .bottom {
+        flex-wrap: wrap;
+        .left-side {
+          width: 100%;
+          .social {
+            justify-content: flex-start;
+          }
+        }
+        .right-side {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 721px) and (max-width: 992px) {
+  .consulting {
+    .top {
+      .container {
+        flex-wrap: wrap;
+        .card-item {
+          width: 47%;
+          margin: 15px 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .text-content {
+    max-width: 100%;
+    h2 {
+      font-size: 30px;
+    }
+  }
+  .bg-img {
+    .container {
+      .text-content {
+        max-width: 100%;
+      }
+    }
+  }
+  .consulting {
+    .bottom {
+      .container {
+        flex-wrap: wrap;
+        max-width: 80%;
+        padding: 20px;
+        .left-side {
+          width: 100%;
+        }
+        .right-side {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .managers {
+    .container {
+      flex-wrap: wrap;
+      .manager-card {
+        width: 100%;
+        margin: 20px 0;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1100px) {
+  header {
+    .container {
+      .navbar {
+        nav {
+          display: block;
+        }
+        .bars {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1101px) and (max-width: 1300px) {
+  header {
+    .container {
+      max-width: 90%;
+    }
+  }
+}
+@media screen and (max-width: 1120px) {
+  .bg-img {
+    .container {
+      .icon-groups {
+        .icon-group {
+          p {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
